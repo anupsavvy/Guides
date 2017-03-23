@@ -1,4 +1,4 @@
-# Steps involved in deploying Django app with Nginx reverse proxy on RHEL7:
+# Deploying Django app with Nginx reverse proxy on RHEL7:
 ```
 
 ################# if needed ##############
