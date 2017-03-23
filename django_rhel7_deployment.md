@@ -275,7 +275,6 @@ $ sudo systemctl start uwsgi
 13) sudo crontab -e
 
 14) Add following to the file that opens and save
-
     30 2 * * 1 /usr/bin/certbot renew >> /var/log/le-renew.log
     35 2 * * 1 /usr/bin/systemctl reload nginx
     
