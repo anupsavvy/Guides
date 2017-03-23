@@ -1,8 +1,4 @@
-Steps involved in putting django project into production:
-
-(These steps assume that the Python3 and pip3 has been already installed on the server)
-
-If Python3 and pip3 not installed, do:
+Steps involved in deploying Django app with Nginx reverse proxy on RHEL7:
 
 ################# if needed ##############
 
