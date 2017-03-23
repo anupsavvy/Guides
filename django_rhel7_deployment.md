@@ -66,8 +66,9 @@ Assuming you have similar folder structure when you clone
 
 REPO FOLDER
 
+'''
+
 ├── db.sqlite3
-|
 ├── mdt
 │   ├── __init__.py
 │   ├── __pycache__
@@ -85,3 +86,4 @@ REPO FOLDER
         │   ├── base.css
         │   ├── changelists.css
 
+'''
