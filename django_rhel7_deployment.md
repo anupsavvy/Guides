@@ -1,6 +1,4 @@
-Steps involved in putting django project into production:
-
-(These steps assume that the Python3 and pip3 has been already installed on the server)
+Steps involved in deploying Django App with Nginx Reverse proxy on RHEL 7
 
 If Python3 and pip3 not installed, do:
 
@@ -119,7 +117,7 @@ $ sudo vi your_project_name.ini
 
 [uwsgi]
 project = YOUR_PROJECT_NAME
-username = NETID
+username = USERNAME
 base = /home/%(username)
 
 chdir = %(base)/%(project)/src
@@ -147,7 +145,7 @@ $ sudo vi /etc/systemd/system/uwsgi.service
 Description=uWSGI Emperor service
 
 [Service]
-ExecStartPre=/usr/bin/bash -c 'mkdir -p /run/uwsgi; chown NETID:nginx /run/uwsgi'
+ExecStartPre=/usr/bin/bash -c 'mkdir -p /run/uwsgi; chown USERNAME:nginx /run/uwsgi'
 ExecStart=/usr/bin/uwsgi --emperor /etc/uwsgi/sites
 Restart=always
 KillSignal=SIGQUIT
@@ -166,7 +164,7 @@ $ sudo vi /etc/nginx/nginx.conf
 
 server {
         listen 80;
-        server_name sonictest.soc.northwestern.edu;
+        server_name {{domain}};
 
         location = favicon.ico { access_log off; log_not_found off;}
         location /static/ {
@@ -192,8 +190,8 @@ $ sudo nginx -t
 (If no errors are reported, our file is in good condition.)
 
 
-$ sudo usermod -a -G NETID nginx
-$ chmod 710 /home/NETID
+$ sudo usermod -a -G USERNAME nginx
+$ chmod 710 /home/USERNAME
 
 $ cd ~/YOUR_PROJECT_NAME
 $ cd src/YOUR_PROJECT_NAME/
@@ -202,7 +200,7 @@ $ cd src/YOUR_PROJECT_NAME/
 
 DEBUG = False
 
-ALLOWED_HOSTS = ["sonictest.soc.northwestern.edu"]
+ALLOWED_HOSTS = ["domain"]
 
 ######################## Save and Close file (escape :wq) #################################
 
@@ -238,20 +236,20 @@ $ sudo systemctl start uwsgi
 4) Add following to /etc/nginx/nginx.conf inside the server block
 
     location /.well-known {
-        alias /var/www/{{site_name ex. v2mdt.soc.northwestern.edu}}/.well-known;
+        alias /var/www/{{site_name}}/.well-known;
     }
     
 5) $ cd /var/www
 
-6) $ sudo mkdir {{site_name ex. v2mdt.soc.northwestern.edu}}
+6) $ sudo mkdir {{site_name}}
 
-7) $ cd {{site_name ex. v2mdt.soc.northwestern.edu}}
+7) $ cd {{site_name}}
 
 8) $ sudo mkdir .well-known
 
 9) $ sudo systemctl restart nginx
 
-10) $ sudo certbot certonly -a webroot --webroot-path=/usr/share/nginx/html -d {{site_name ex. v2mdt.soc.northwestern.edu}}
+10) $ sudo certbot certonly -a webroot --webroot-path=/usr/share/nginx/html -d {{site_name}}
 
 11) $ sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
 
