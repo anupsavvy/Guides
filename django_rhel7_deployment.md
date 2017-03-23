@@ -1,4 +1,5 @@
 Steps involved in deploying Django app with Nginx reverse proxy on RHEL7:
+```
 
 ################# if needed ##############
 
@@ -65,9 +66,6 @@ $ source your_project_name/bin/activate
 Assuming you have similar folder structure when you clone
 
 REPO FOLDER
-
-```
-
 ├── db.sqlite3
 ├── mdt
 │   ├── __init__.py
