@@ -66,7 +66,7 @@ Assuming you have similar folder structure when you clone
 
 REPO FOLDER
 
-'''
+```
 
 ├── db.sqlite3
 ├── mdt
@@ -86,4 +86,4 @@ REPO FOLDER
         │   ├── base.css
         │   ├── changelists.css
 
-'''
+```
