@@ -182,10 +182,10 @@ server {
 
         location = favicon.ico { access_log off; log_not_found off;}
         location /static/ {
-                alias /home/ass198/mdt/(YOUR STATIC ROOT FOLDER);
+                alias /home/username/mdt/(YOUR STATIC ROOT FOLDER);
         }
         location /media/ {
-                alias /home/ass198/mdt/(YOUR MEDIA ROOT FOLDER);
+                alias /home/username/mdt/(YOUR MEDIA ROOT FOLDER);
         }
 
         location / {
