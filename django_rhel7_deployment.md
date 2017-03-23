@@ -62,5 +62,5 @@ $ source your_project_name/bin/activate
 
 (mdt) $ cd ~
 
-(mdt) $ git clone netid@sonicapps.soc.northwestern.edu
+(mdt) $ git clone path_to_git_repository
 
