@@ -60,3 +60,28 @@ $ source your_project_name/bin/activate
 
 (mdt) $ git clone path_to_git_repository
 
+################# Folder structure #####################################
+
+Assuming you have similar folder structure when you clone
+
+REPO FOLDER
+
+├── db.sqlite3
+|
+├── mdt
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-34.pyc
+│   │   ├── settings.cpython-34.pyc
+│   │   ├── urls.cpython-34.pyc
+│   │   └── wsgi.cpython-34.pyc
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── manage.py
+└── static
+    └── admin
+        ├── css
+        │   ├── base.css
+        │   ├── changelists.css
+
