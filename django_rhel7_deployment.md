@@ -19,7 +19,11 @@ $ sudo rpm -Uvh ius-release*.rpm
 ################## if needed ##########################
 
 $ sudo yum install python34
+
 $ sudo yum -y install python34u-pip
+
 $ sudo pip3.4 install virtualenv
+
 $ sudo pip3.4 install virtualenvwrapper
+
 $ alias python=/usr/bin/python3
