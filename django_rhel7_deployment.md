@@ -159,7 +159,7 @@ $ sudo vi /etc/systemd/system/uwsgi.service
 Description=uWSGI Emperor service
 
 [Service]
-ExecStartPre=/usr/bin/bash -c 'mkdir -p /run/uwsgi; chown NETID:nginx /run/uwsgi'
+ExecStartPre=/usr/bin/bash -c 'mkdir -p /run/uwsgi; chown USERNAME:nginx /run/uwsgi'
 ExecStart=/usr/bin/uwsgi --emperor /etc/uwsgi/sites
 Restart=always
 KillSignal=SIGQUIT
@@ -178,7 +178,7 @@ $ sudo vi /etc/nginx/nginx.conf
 
 server {
         listen 80;
-        server_name sonictest.soc.northwestern.edu;
+        server_name {{domain}};
 
         location = favicon.ico { access_log off; log_not_found off;}
         location /static/ {
