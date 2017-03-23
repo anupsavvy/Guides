@@ -27,3 +27,40 @@ $ sudo pip3.4 install virtualenv
 $ sudo pip3.4 install virtualenvwrapper
 
 $ alias python=/usr/bin/python3
+
+########## Terminal Commands ###########
+
+$ sudo yum install git
+
+$ sudo yum install redis
+
+$ sudo yum install nginx
+
+$ sudo yum install mariadb mariadb-server
+
+$ sudo yum install mysql mysql-devel mysql-lib
+
+########## Edit .bashrc ##############
+
+Following goes in .bashrc under /home/username
+
+$ echo "export WORKON_HOME=~/Env" >> ~/.bashrc
+
+$ echo "source /usr/bin/virtualenvwrapper.sh" >> ~/.bashrc
+
+############ Terminal Commands ###########
+
+$ source ~/.bashrc
+
+$ cd ~/Env
+
+$ virtualenv your_project_name
+
+$ source your_project_name/bin/activate
+
+############## Virtual Env Start ######################################
+
+(mdt) $ cd ~
+
+(mdt) $ git clone netid@sonicapps.soc.northwestern.edu
+
